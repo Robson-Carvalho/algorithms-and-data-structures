@@ -3,20 +3,16 @@ package function
 import "fmt"
 
 func MoveZeroes(nums []int){
-	aux := []int{}
-
-	for _, value := range nums {
-		if value != 0 {
-			aux = append(aux, value)
+	var lastZero int = 0
+	
+	for i := range nums {
+		if nums[i] != 0 {
+			aux := nums[lastZero]
+			nums[lastZero] = nums[i]
+			nums[i] = aux
+			lastZero++
 		}
 	}
-
-	zeroesCount := len(nums) - len(aux)
-	for i := 0; i < zeroesCount; i++ {
-		aux = append(aux, 0)
-	}
-
-	copy(nums, aux)
 
 	fmt.Println(nums)
 }
