@@ -1,6 +1,6 @@
 package main
 
-import "GoLang/move-zeroes/function"
+import "Arrays/move-zeroes/function"
 
 func main() {
 	arr1 := []int{0,1,0,3,12}
