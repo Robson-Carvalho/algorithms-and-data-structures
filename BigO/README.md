@@ -60,3 +60,39 @@ Se n = 1.000.000.000 então O = 1.000.000.002
 Podemos perceber que quanto maior for o valor de n, mais irrelevante se torna o valor 2, logo o que importa de fato é o maior termo.
 
 O(n+2) => O(n) [Linear], já que o que importa é o maior termo.
+
+#### Analisando a função do desafio "First Uniq Char"
+
+```go
+func FirstUniqChar(s string) int {
+	arr := [26]int{} // -> 1 operação
+
+	for _, value := range s { // -> n operações
+		arr[value-97]++ // -> 1 operação
+	}
+
+	for i, value := range s { // -> n operações
+		if arr[value-97] == 1  {
+			return i // -> 1 operação
+		}
+	}
+
+	return -1 // -> 1 operação
+}
+```
+
+Podemos observar que a operação do retorno do index da primeira letra que não se repete em uma string também conta como uma operação, devemos ficar atentos que mesmo que uma condição não seja sempre verdadeira, estamos analisando o pior cenário possível, por exemplo uma string com todas as letras do alfabeto em ordem alfabética, onde a única letra que não se repete é a letra z ou que todas as letras se repitam.
+
+```bash
+aabbcc...xxwwz
+```
+
+Agora vamos construir a fórmula matemática a partir das operações observadas.
+
+O(n) = 1 + (n\*1) + (n\*1) + 1
+<br>
+O(n) = 2 + n + n
+<br>
+O(n) = 2n + 2
+
+Logo temos uma função Linear, que cresce conforme o tamanho do input.
