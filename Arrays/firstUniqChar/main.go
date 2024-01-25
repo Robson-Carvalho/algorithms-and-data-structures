@@ -1,14 +1,26 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/robson-carvalho/algorithms-and-data-structures/Arrays/firstUniqChar/function"
-)
+import "fmt"
 
 func main() {
-	fmt.Println(function.FirstUniqChar("leetcode"))
-	fmt.Println(function.FirstUniqChar("loveleetcode"))
-	fmt.Println(function.FirstUniqChar("aabb"))
-	fmt.Println(function.FirstUniqChar("z"))
+	fmt.Println(firstUniqChar("leetcode"))
+	fmt.Println(firstUniqChar("loveleetcode"))
+	fmt.Println(firstUniqChar("aabb"))
+	fmt.Println(firstUniqChar("z"))
+}
+
+func firstUniqChar(s string) int {
+	arr := [26]int{}
+
+	for _, value := range s {
+		arr[value-97]++
+	}
+
+	for i, value := range s {
+		if arr[value-97] == 1 {
+			return i
+		}
+	}
+
+	return -1
 }
