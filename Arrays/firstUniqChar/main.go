@@ -1,8 +1,9 @@
 package main
 
 import (
-	"Arrays/firstUniqChar/function"
 	"fmt"
+
+	"github.com/robson-carvalho/algorithms-and-data-structures/Arrays/firstUniqChar/function"
 )
 
 func main() {

@@ -1,6 +1,8 @@
 package main
 
-import "Arrays/move-zeroes/function"
+import "github.com/robson-carvalho/algorithms-and-data-structures/Arrays/moveZeroes/function"
+
+
 
 func main() {
 	arr1 := []int{0,1,0,3,12}
