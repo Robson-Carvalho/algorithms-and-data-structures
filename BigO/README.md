@@ -144,3 +144,26 @@ O(2 + 2*10²) = 2 + (2 * 100)
 O(2 + 2*10²) = 2 + 200
 O(2 + 2*10²) = 202
 ```
+
+Se o tamanho do input for igual a 1.000.000, ou seja, n = 1.000.000, vamos ter a seguinte expressão:
+
+```bash
+O(2 + 2n²)
+O(2 + 2*1.000.000²) = 2 + (2 * 1.000.000²)
+O(2 + 2*1.000.000²) = 2 + (2 * 1.000.000.000.000)
+O(2 + 2*1.000.000²) = 2 + 2.000.000.000.000
+O(2 + 2*1.000.000²) = 2.000.000.000.002
+```
+
+Podemos observar que algoritmos com notação Big O quadrático não são perfomáticos ou escaláveis, já que para um input com tamanho de 1 milhão, no pior dos casos, que é o que a análise assintótica visa encontrar, vamos ter dois trilhões e duas operações. Agora vamos simplificar a expressão, vamos encontrar o termo que faz o algoritmo escalar.
+
+```bash
+O(n²)
+```
+
+O maior termo do algoritmo analisado é o **n²**, já que é o termo que faz o algoritmo escalar. Dessa forma, vamos chamar essa função O de n ao quadrado O(n²)
+
+#### Gráfico de um algoritmo quadrático O(n²)
+
+![Gráfico de um algoritmo quadrático O(n²)](https://res.cloudinary.com/practicaldev/image/fetch/s--lVnY7ZAn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AGKAnOWbIA7CRV4OUB3STZw.png)
+[Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)

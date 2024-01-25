@@ -1,8 +1,8 @@
 # Estudos de Algoritmos e Estruturas de Dados
 
-Este repositório no GitHub é dedicado ao estudo e implementação de algoritmos e estruturas de dados. Ele abrange uma variedade de tópicos essenciais para desenvolvedores de software, proporcionando um recurso valioso para a compreensão e aplicação prática de conceitos fundamentais em ciência da computação.
+Este repositório é dedicado ao estudo e implementação de algoritmos e estruturas de dados. Ele abrange uma variedade de tópicos essenciais para desenvolvedores de software, proporcionando um recurso valioso para a compreensão e aplicação prática de conceitos fundamentais em ciência da computação.
 
-## Tópicos Principais
+## Tópicos
 
 1. **Big(O):** Introdução ao conceito de complexidade assintótica.
 
@@ -58,11 +58,34 @@ Este repositório no GitHub é dedicado ao estudo e implementação de algoritmo
 
 Este repositório proporciona uma abordagem prática e abrangente para o aprendizado e aplicação de algoritmos e estruturas de dados, tornando-se uma valiosa fonte de referência para estudantes e profissionais de desenvolvimento de software.
 
-## Tópicos Estudados
+## Tópicos estudados
 
-- [Big O Notation](./BigO/README.md) Introdução ao conceito de complexidade assintótica.
-- [Arrays](./Arrays/README.md) Implementação e manipulação de arrays.
-- [Hash Table](./HashTable/README.md) Exploração de estruturas de dados baseadas em hash.
+- [Big O Notation](./BigO/README.md)
+
+## Contribuindo
+
+Se você deseja contribuir para este projeto, siga estas etapas:
+
+Faça um fork do repositório.
+Crie uma branch para suas alterações:
+
+```bash
+git checkout -b feature/nova-funcionalidade.
+```
+
+Faça as alterações desejadas e commit:
+
+```bash
+git commit -m 'Adiciona nova funcionalidade'.
+```
+
+Push para a branch:
+
+```bash
+git push origin feature/nova-funcionalidade.
+```
+
+Abra um pull request descrevendo suas alterações.
 
 ## Licença
 
