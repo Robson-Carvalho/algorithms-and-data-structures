@@ -167,3 +167,64 @@ O maior termo do algoritmo analisado é o **n²**, já que é o termo que faz o 
 
 ![Gráfico de um algoritmo quadrático O(n²)](https://res.cloudinary.com/practicaldev/image/fetch/s--lVnY7ZAn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AGKAnOWbIA7CRV4OUB3STZw.png)
 [Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
+
+### Notação Big O Constante ou O(1)
+
+Algoritmos que, não importa o tamanho do input, sempre executarão no mesmo tempo. Vamos analisar uma função simples com complexidade O de 1 ou constante.
+
+```go
+func firstPosition(arr []int) int {
+	return arr[0] // -> 1
+}
+```
+
+A função acima pode receber uma array com 10 mil ou 10 bilhões de posições, o número de operações será o mesmo, já que só exite uma operação, retornar o primeiro elemento de um array, o que por sua vez tem complexidade contastante, já que muitas estruturas de dados nativas nas linguagens de programação buscam complexidade O de 1 ou próximo disso. A notação O de 1 seria a melhor opção, já que escala super bem, uma vez que não importa o tamanho do input, o número de operações sempre será o mesmo, sendo assim o caso ideal que buscamos nos algoritmos quando pensamos em performance e escalabilidade.
+
+#### Gráfico de um algoritmo constante O(1)
+
+![Gráfico de um algoritmo quadrático O(1)](https://res.cloudinary.com/practicaldev/image/fetch/s--ZGf9Fiwp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AC--4xOJ1aDuUykTZ4z5UGg.png)
+[Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
+
+### Notação Big O Logarítimico ou O(log n)
+
+Algoritmos O log n dividem o problema pela metade a cada passo, fazendo com que tenha um comportamento logarítimico.
+
+Para entendermos melhor como funciona um algoritmo logarítimico, vamos observar a função de busca binária Binary Search que possui uma complexidade logarítimica.
+
+```go
+func BinarySearch(arr []int, target int) *int {
+	head := 0
+	last := len(arr) - 1
+
+	for head <= last{
+		middle := (head + last) / 2
+
+		if arr[middle] == target {
+			return &middle
+		}
+
+		if arr[middle] > target {
+			last = middle - 1
+		}else {
+			head = middle + 1
+		}
+	}
+
+	return nil
+}
+```
+
+A característica de um algoritimo logarítimico é dividir o problema pela metade a cada operação, que é justamente o comportamento da função Binary Search. Analisando a função acima, podemos observar que a função recebe um array de inteiros ordenados e um valor para ser encontrado, a função primeiro busca o elemento do meio do array e verifica se é a valor que estamos buscando, caso não seja, fazemos a verificação se o valor encontrado é maior ou menor ao valor que estamos buscando.
+
+Se o valor encontrado for menor, vamos agora dividir o array original pela metade, excluíndo todos os valores maiores que o valor que estamos buscando, dividindo assim o problema pela metade.
+
+Novamente, fazemos buscamos o elemento do meio do array, se o elemento encontrado for maior do que estamos buscando, dividimos novamente o array original pela metade, dessa vez excluíndo todos os valores menores que o valor que estamos buscando, dividindo novamente o problema pela metade.
+
+Continuamos nessa buscar até encontrarmos ou não valor, retornando assim o index do valor no array ou o tipo de dado nulo.
+
+Esse é o comportamento clássico de um algoritmo de complexidade O log n.
+
+#### Gráfico de um algoritmo logarítimico O(log n)
+
+![Gráfico de um algoritmo quadrático O(1)](https://res.cloudinary.com/practicaldev/image/fetch/s--wyNrN4oo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AUHTWeGAoDrJL1mhvtKkVGw.png)
+[Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
