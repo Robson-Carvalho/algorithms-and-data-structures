@@ -98,6 +98,7 @@ Dessa forma, o que importa é o maior termo já que é o que faz o algoritmo esc
 #### Gráfico de um algoritmo Linear O(n)
 
 ![Gráfico de um algoritmo Linear O(n)](https://res.cloudinary.com/practicaldev/image/fetch/s--gq0tGoAm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AX5JanH7K1HPOarB4fJpTTg.png)
+<br>
 [Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
 
 Agora que entendermos como realizar a análise assintótica de um algoritmo e descobrimos como funciona um algorimto de Big O linear, vamos partir para outros exemplos, como o quadrático.
@@ -166,6 +167,7 @@ O maior termo do algoritmo analisado é o **n²**, já que é o termo que faz o 
 #### Gráfico de um algoritmo quadrático O(n²)
 
 ![Gráfico de um algoritmo quadrático O(n²)](https://res.cloudinary.com/practicaldev/image/fetch/s--lVnY7ZAn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AGKAnOWbIA7CRV4OUB3STZw.png)
+<br>
 [Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
 
 ### Notação Big O Constante ou O(1)
@@ -182,7 +184,8 @@ A função acima pode receber uma array com 10 mil ou 10 bilhões de posições,
 
 #### Gráfico de um algoritmo constante O(1)
 
-![Gráfico de um algoritmo quadrático O(1)](https://res.cloudinary.com/practicaldev/image/fetch/s--ZGf9Fiwp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AC--4xOJ1aDuUykTZ4z5UGg.png)
+![Gráfico de um algoritmo constante O(1)](https://res.cloudinary.com/practicaldev/image/fetch/s--ZGf9Fiwp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AC--4xOJ1aDuUykTZ4z5UGg.png)
+<br>
 [Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
 
 ### Notação Big O Logarítimico ou O(log n)
@@ -222,9 +225,78 @@ Novamente, fazemos buscamos o elemento do meio do array, se o elemento encontrad
 
 Continuamos nessa buscar até encontrarmos ou não valor, retornando assim o index do valor no array ou o tipo de dado nulo.
 
-Esse é o comportamento clássico de um algoritmo de complexidade O log n.
+Esse é o comportamento clássico de um algoritmo de complexidade O log n do Big O que é a melhor complexidade depois do O de 1 que conseguimos encontrar.
 
 #### Gráfico de um algoritmo logarítimico O(log n)
 
-![Gráfico de um algoritmo quadrático O(1)](https://res.cloudinary.com/practicaldev/image/fetch/s--wyNrN4oo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AUHTWeGAoDrJL1mhvtKkVGw.png)
+![Gráfico de um algoritmo Logarítimico O(log n)](https://res.cloudinary.com/practicaldev/image/fetch/s--wyNrN4oo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/640/1%2AUHTWeGAoDrJL1mhvtKkVGw.png)
+<br>
 [Eduardo Rabelo](https://dev.to/oieduardorabelo/os-fundamentos-da-notacao-big-o-1jbp)
+
+### Notação Big O Linear Logarítimico ou O(n log n)
+
+Algoritmos lineares logarítimicos são geralmente associados com algoritmos de ordenação.
+
+Devemos nos atentar que a complexidade Linear O(n) e Logarítimico O(log n) é diferente do Linear Logarítimico O(n log n), podemos notar observando o gráfico de diversas complexidades do Big O a seguir:
+
+![Gráfico de um algoritmo Linear Logarítimico O(n log n)](https://miro.medium.com/v2/resize:fit:720/format:webp/1*hGmdZ3v2sGpY54K3eTNVkw.png)
+<br>
+[Toni Esteves](https://estevestoni.medium.com/iniciando-com-a-nota%C3%A7%C3%A3o-big-o-be996fa3b47b)
+
+Dessa forma, é visível que o algoritmo Linear é mais escalável que o Linear Logarítimico e o Logarítimico é o mais escalável entre os dois.
+
+### Notação Big O Exponencial ou O(2^n)
+
+Algoritmos exponenciais normalmente envolvem passos recursivos onde o problema dobra a cada passo.
+
+Esses tipos de complexidade geralmente não são muito usáveis, já que não escalam nada bem, um exemplo é o algoritmo de fibonacci.
+
+```go
+func fibonacci(num int) int{
+	if num <= 1{
+		return num
+	}
+
+	return fibonacci(num - 1) + fibonacci((num - 2))
+}
+```
+
+A função de fibonacci utiliza a técnica de recursão e podemos expressar o número de operações em relação ao tamanho do input.
+
+### Notação Big O Fatorial ou O(n!)
+
+Algoritmos fatoriais são os piores casos de complexidade Big O. Normalmente envovem passos recursivos onde o problema cresce de forma fatorial a cada passo. Um bom exemplo e o Traveling Salesman Problem (TSP) ou caixeiro-viajante usando força bruta. Calculo de probabilidades e permutação também usam fatorial.
+
+Um exemplo de um algoritmo de complexidade fatorial é o próprio cálculo matemático para encontrar o fatorial de um número, o qual podemos observar a seguir:
+
+```go
+func factorial(num int) int {
+	if num <= 1 {
+		return num
+	}
+
+	return factorial(num-1) * num
+}
+```
+
+Agora vamos fazer algumas operações com o algoritmo fatorial para entendermos o qual ruim e a complexidade fatorial do Big O.
+
+Se o tamanho do input for igual a 10, ou seja, n = 10, vamos ter a seguinte expressão:
+
+```bash
+O(n!)
+O(10!) = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+O(10!) = 3.628.800
+```
+
+Podemos notar que para um input n de tamanho 10, o algoritmo irá realizar mais de 3 milhoões de operaçoes, o que podemos considerar nada escalável.
+
+A seguir, temos um gráfico com todas as complexidade do Big O citadas até aqui.
+
+![Gráfico de um algoritmo Fatorial O(n!)](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_KfZYFUT2OKfjekJlCeYvuQ.jpeg)
+<br>
+[Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
+
+### Análise de Algoritmo
+
+Quando fazemos a análise de um algoritmo, devemos fazer três análises, sendo elas do **melhor caso**, do caso médio e do pior caso.
