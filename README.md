@@ -60,7 +60,8 @@ Este repositório proporciona uma abordagem prática e abrangente para o aprendi
 
 ## Tópicos estudados
 
-- [Big O Notation](./BigO/README.md)
+- [x] [Big O Notation](./BigO/README.md)
+- [ ] [Arrays (Vetores)](./Arrays/README.md)
 
 ## Contribuindo
 

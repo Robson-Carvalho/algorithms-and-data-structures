@@ -297,6 +297,43 @@ A seguir, temos um gráfico com todas as complexidade do Big O citadas até aqui
 <br>
 [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 
-### Análise de Algoritmo
+### Análise de Algoritmos
 
-Quando fazemos a análise de um algoritmo, devemos fazer três análises, sendo elas do **melhor caso**, do caso médio e do pior caso.
+Quando fazemos a análise de um algoritmo, devemos fazer três análises, sendo elas do **melhor caso**, do **caso médio** e do **pior caso**.
+
+#### Melhor Caso
+
+A complexidade de um algoritmo quando os dados estão dispostos de forma que o desempenho do algoritmo é mais rápido e usa menos recursos computacionais.
+
+#### Caso Médio
+
+Refere-se ao desempenho médio do algoritmo considerando todas as possiveis entradas. Refere-se ao comportamento típico do algoritmo.
+
+#### Pior Caso
+
+Quando os dados estão dispostos de forma que o algoritmo utiliza o máximo de recursos computacionais. **Esse é o caso que você precisa realmente saber**.
+
+### Analisando os três casos no algoritmo de Busca Linear
+
+```go
+func linearSearch(arr []int, target int) int {
+	for i := 0; i < len(arr); i++ {
+		if arr[i] == target {
+			return i
+		}
+	}
+	return -1
+}
+```
+
+#### Complexidade de Tempo
+
+- Melhor caso: Quando estamos buscando um elemento e o mesmo está na primeira posição, o algoritmo sempre realizará apenas uma operação, sendo assim, um algortimo com complexidade O(1).
+
+- Caso médio: No caso médio, o valor a ser encontrado geralmente estará pelo meio da lista, um pouco mais ou menos, mas próximo ao meio, sendo assim um algoritmo O(n/2), mas no Big O Notation representamos apenas com o maior termo, logo a complexidade do algoritmo é O(n), mas lembrando que é O(n/2).
+
+- Pior caso: O pior caso num algoritmo de busca linear e o valor a ser encontrado está na última posição ou não existir, já que o algoritmo terá que chega até o final da lista para encontrar ou não o valor, sendo assim uma complexidade de O(n).
+
+#### Complexidade de Espaço
+
+Complexidade de espaço nada mais é do que a quantidade de memória que um algoritmo aloca dependendo do tamanho do input durante sua execução e no caso do algoritmo de buscar linar visto acima, temos uma complexidade de espaço de O(1) nos três casos, já que não temos nenhuma aloação de memória não importa o tamanho do input.
